@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Lernen Tools - 德语学习工具集</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-bg: #f5f5f7;
+            --color-surface: #ffffff;
+            --color-text: #1d1d1f;
+            --color-text-muted: #6e6e73;
+            --color-accent: #0071e3;
+            --color-accent-text: #ffffff;
+            --color-border: #d2d2d7;
+            --color-info: #0071e3;
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            min-height: 100vh;
+        }
+
+        .hub-container {
+            padding: 2rem;
+        }
+
+        .hub-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hub-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .hub-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tool-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .tool-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--color-info);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            align-self: flex-start;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .coming-soon .tool-icon {
+            background: var(--color-text-muted);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hub-title {
+                font-size: 2rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hub-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hub-container">
+        <header class="hub-header">
+            <h1 class="hub-title">🇩🇪 Deutsch Lernen Tools</h1>
+            <p class="hub-subtitle">德语学习工具集 - 让学习更高效</p>
+        </header>
+
+        <div class="tools-grid">
+            <a href="https://deutsch-aussprache.rosettatools.cn" target="_blank" class="tool-card">
+                <div class="tool-icon">🎤</div>
+                <h3 class="tool-name">Deutsch Aussprache</h3>
+                <p class="tool-desc">输入任何德语文字，可以听发音，可以跟读并录音回放对比</p>
+                <span class="tool-badge">发音练习</span>
+            </a>
+
+            <a href="https://deutsch-flow-learning.replit.app" target="_blank" class="tool-card">
+                <div class="tool-icon">🎧</div>
+                <h3 class="tool-name">Deutschflow 德语精听</h3>
+                <p class="tool-desc">搜索德语播客，语音转录并翻译，字幕随音频播放，点击字幕词句AI助手实时答疑</p>
+                <span class="tool-badge">听力训练</span>
+            </a>
+
+            <a href="https://deutsch-satz-analysator.rosettatools.cn" target="_blank" class="tool-card">
+                <div class="tool-icon">📊</div>
+                <h3 class="tool-name">Satz Analysator</h3>
+                <p class="tool-desc">德语句法可视化分析：输入德语句子，可视化分析句子结构和成分，并拆解语义</p>
+                <span class="tool-badge">句法分析</span>
+            </a>
+
+            <a href="https://deutsch-denken.rosettatools.cn" target="_blank" class="tool-card">
+                <div class="tool-icon">🧠</div>
+                <h3 class="tool-name">Deutsch Denken</h3>
+                <p class="tool-desc">德语思维：以母语者的思维来解读句子</p>
+                <span class="tool-badge">思维训练</span>
+            </a>
+
+            <a href="https://deutschschreib.rosettatools.cn" target="_blank" class="tool-card">
+                <div class="tool-icon">✍️</div>
+                <h3 class="tool-name">Schreiben 写作助手</h3>
+                <p class="tool-desc">德语写作助手：输入自己的写作文字，AI检查语法和用词错误，并按照用户指定的德语水平来重写</p>
+                <span class="tool-badge">写作辅助</span>
+            </a>
+
+            <div class="tool-card coming-soon">
+                <div class="tool-icon">➕</div>
+                <h3 class="tool-name">更多工具</h3>
+                <p class="tool-desc">持续开发中，敬请期待...</p>
+                <span class="tool-badge" style="background: var(--color-text-muted)">即将推出</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>💡 提示：点击卡片即可打开对应工具</p>
+        </div>
+    </div>
+</body>
+</html>
