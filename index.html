@@ -111,6 +111,31 @@
             align-self: flex-start;
         }
 
+        .tool-api-info {
+            margin-top: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(0, 113, 227, 0.08);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            line-height: 1.4;
+        }
+
+        .tool-api-info strong {
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .api-free {
+            color: #34c759;
+            font-weight: 500;
+        }
+
+        .api-low-cost {
+            color: #ff9500;
+            font-weight: 500;
+        }
+
         .coming-soon {
             opacity: 0.6;
             pointer-events: none;
@@ -157,6 +182,11 @@
                 <h3 class="tool-name">Deutsch Aussprache</h3>
                 <p class="tool-desc">输入任何德语文字，可以听发音，可以跟读并录音回放对比</p>
                 <span class="tool-badge">发音练习</span>
+                <div class="tool-api-info">
+                    <strong>API 要求：</strong><br>
+                    • 免费模式：无需 API<br>
+                    • 精准模式：需 Azure 账号（含免费额度）
+                </div>
             </a>
 
             <a href="https://deutsch-flow-learning.replit.app" target="_blank" class="tool-card">
@@ -164,6 +194,11 @@
                 <h3 class="tool-name">Deutschflow 德语精听</h3>
                 <p class="tool-desc">搜索德语播客，语音转录并翻译，字幕随音频播放，点击字幕词句AI助手实时答疑</p>
                 <span class="tool-badge">听力训练</span>
+                <div class="tool-api-info">
+                    <strong>API 要求：</strong><br>
+                    • Groq API（免费）<br>
+                    • DeepSeek API（费用极低）
+                </div>
             </a>
 
             <a href="https://deutsch-satz-analysator.rosettatools.cn" target="_blank" class="tool-card">
@@ -171,6 +206,10 @@
                 <h3 class="tool-name">Satz Analysator</h3>
                 <p class="tool-desc">德语句法可视化分析：输入德语句子，可视化分析句子结构和成分，并拆解语义</p>
                 <span class="tool-badge">句法分析</span>
+                <div class="tool-api-info">
+                    <strong>API 要求：</strong><br>
+                    • DeepSeek API（费用极低）
+                </div>
             </a>
 
             <a href="https://deutsch-denken.rosettatools.cn" target="_blank" class="tool-card">
@@ -178,6 +217,10 @@
                 <h3 class="tool-name">Deutsch Denken</h3>
                 <p class="tool-desc">德语思维：以母语者的思维来解读句子</p>
                 <span class="tool-badge">思维训练</span>
+                <div class="tool-api-info">
+                    <strong>API 要求：</strong><br>
+                    • DeepSeek API（费用极低）
+                </div>
             </a>
 
             <a href="https://deutschschreib.rosettatools.cn" target="_blank" class="tool-card">
@@ -185,6 +228,10 @@
                 <h3 class="tool-name">Schreiben 写作助手</h3>
                 <p class="tool-desc">德语写作助手：输入自己的写作文字，AI检查语法和用词错误，并按照用户指定的德语水平来重写</p>
                 <span class="tool-badge">写作辅助</span>
+                <div class="tool-api-info">
+                    <strong>API 要求：</strong><br>
+                    • DeepSeek API（费用极低）
+                </div>
             </a>
 
             <a href="https://german-trainer.rosettatools.cn" target="_blank" class="tool-card">
@@ -192,6 +239,10 @@
                 <h3 class="tool-name">Deutsch Trainer</h3>
                 <p class="tool-desc">德语训练：常用词，常见语法结构训练，持续更新中</p>
                 <span class="tool-badge">词汇语法</span>
+                <div class="tool-api-info">
+                    <strong>API 要求：</strong><br>
+                    <span class="api-free">• 无需 API</span>
+                </div>
             </a>
 
             <div class="tool-card coming-soon">
