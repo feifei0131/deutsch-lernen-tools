@@ -47,6 +47,42 @@
             color: var(--color-text-muted);
         }
 
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            background: var(--color-accent);
+            color: var(--color-accent-text);
+            border-color: var(--color-accent);
+        }
+
+        .filter-btn.active {
+            background: var(--color-accent);
+            color: var(--color-accent-text);
+            border-color: var(--color-accent);
+        }
+
+        .tool-card.hidden {
+            display: none;
+        }
+
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -192,8 +228,17 @@
             <p class="hub-subtitle">德语学习工具集 - 让学习更高效</p>
         </header>
 
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="speak">说</button>
+            <button class="filter-btn" data-filter="listen">听</button>
+            <button class="filter-btn" data-filter="read">读</button>
+            <button class="filter-btn" data-filter="write">写</button>
+            <button class="filter-btn" data-filter="vocab">词汇语法训练</button>
+        </div>
+
         <div class="tools-grid">
-            <a href="https://deutsch-aussprache.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://deutsch-aussprache.rosettatools.cn" target="_blank" class="tool-card" data-category="speak">
                 <div class="tool-icon">🎤</div>
                 <h3 class="tool-name">Deutsch Aussprache</h3>
                 <p class="tool-desc">输入任何德语文字，可以听发音，可以跟读并录音回放对比</p>
@@ -210,7 +255,7 @@
                 </div>
             </a>
 
-            <a href="https://deutsch-flow-learning.replit.app" target="_blank" class="tool-card">
+            <a href="https://deutsch-flow-learning.replit.app" target="_blank" class="tool-card" data-category="listen">
                 <div class="tool-icon">🎧</div>
                 <h3 class="tool-name">Deutschflow 德语精听</h3>
                 <p class="tool-desc">搜索德语播客，语音转录并翻译，字幕随音频播放，点击字幕词句AI助手实时答疑</p>
@@ -227,7 +272,7 @@
                 </div>
             </a>
 
-            <a href="https://deutsch-satz-analysator.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://deutsch-satz-analysator.rosettatools.cn" target="_blank" class="tool-card" data-category="read">
                 <div class="tool-icon">📊</div>
                 <h3 class="tool-name">Satz Analysator</h3>
                 <p class="tool-desc">德语句法可视化分析：输入德语句子，可视化分析句子结构和成分，并拆解语义</p>
@@ -242,7 +287,7 @@
                 </div>
             </a>
 
-            <a href="https://deutsch-denken.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://deutsch-denken.rosettatools.cn" target="_blank" class="tool-card" data-category="read">
                 <div class="tool-icon">🧠</div>
                 <h3 class="tool-name">Deutsch Denken</h3>
                 <p class="tool-desc">德语思维：以母语者的思维来解读句子</p>
@@ -257,7 +302,7 @@
                 </div>
             </a>
 
-            <a href="https://deutschschreib.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://deutschschreib.rosettatools.cn" target="_blank" class="tool-card" data-category="write">
                 <div class="tool-icon">✍️</div>
                 <h3 class="tool-name">Schreiben 写作助手</h3>
                 <p class="tool-desc">德语写作助手：输入自己的写作文字，AI检查语法和用词错误，并按照用户指定的德语水平来重写</p>
@@ -272,7 +317,7 @@
                 </div>
             </a>
 
-            <a href="https://german-trainer.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://german-trainer.rosettatools.cn" target="_blank" class="tool-card" data-category="vocab">
                 <div class="tool-icon">🏋️</div>
                 <h3 class="tool-name">Deutsch Trainer</h3>
                 <p class="tool-desc">德语训练：常用词，常见语法结构训练，持续更新中</p>
@@ -288,7 +333,7 @@
                 </div>
             </a>
 
-            <a href="https://german-prefix-game.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://german-prefix-game.rosettatools.cn" target="_blank" class="tool-card" data-category="vocab">
                 <div class="tool-icon">🎮</div>
                 <h3 class="tool-name">German Prefix Game</h3>
                 <p class="tool-desc">学习和练习德语同根动词，收录了A1-B1 93个常用前缀+同根动词</p>
@@ -304,7 +349,7 @@
                 </div>
             </a>
 
-            <a href="https://praep-trainer.rosettatools.cn" target="_blank" class="tool-card">
+            <a href="https://praep-trainer.rosettatools.cn" target="_blank" class="tool-card" data-category="vocab">
                 <div class="tool-icon">🔗</div>
                 <h3 class="tool-name">Präp-Trainer</h3>
                 <p class="tool-desc">动词介词搭配训练：覆盖139个A1-B2常用动词介词搭配查询，注册用户可以建立自己的学习库进行训练</p>
@@ -332,5 +377,29 @@
             <p>💡 提示：点击卡片即可打开对应工具</p>
         </div>
     </div>
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const toolCards = document.querySelectorAll('.tool-card[data-category]');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                toolCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
